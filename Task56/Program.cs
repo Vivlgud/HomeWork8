@@ -37,7 +37,7 @@ Console.Clear();
         Console.WriteLine();
     }
 
-int[,] arr = FillArray(10, 4, 1, 5);
+int[,] arr = FillArray(4, 4, 1, 10);
 PrintArray(arr);
 
 
