@@ -38,7 +38,7 @@ for (int i = 0; i < rnd.Length; i++)
 
 // Заполнение трехмерного массива из одномерного
 int[,,] array = new int[row, column, depth];
-
+int count = 0;
 // Вывод массива
 for (int i = 0; i < array.GetLength(0); i++)
 {
@@ -46,26 +46,9 @@ for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int k = 0; k < array.GetLength(2); k++)
         {
-            if (i == 0 && j == 0)
-            {
-                array[i, j, k] = rnd[i + j + k];
-                Console.Write($"{array[i, j, k]} [{i},{j},{k}]  ");
-            }
-            if (i == 0 && j == 1)
-            {
-                array[i, j, k] = rnd[i + j + k + 1];
-                Console.Write($"{array[i, j, k]} [{i},{j},{k}]  ");
-            }
-            if (i == 1 && j == 0)
-            {
-                array[i, j, k] = rnd[i + j + k + 3];
-                Console.Write($"{array[i, j, k]} [{i},{j},{k}]  ");
-            }
-            if (i == 1 && j == 1)
-            {
-                array[i, j, k] = rnd[i + j + k + 4];
-                Console.Write($"{array[i, j, k]} [{i},{j},{k}]  ");
-            }
+            array[i, j, k] = rnd[count];
+            count++;
+            Console.Write($"{array[i, j, k]} [{i},{j},{k}]  ");
         }
         Console.WriteLine();
     }
